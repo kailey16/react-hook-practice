@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import BookCardsContainer from './components/BookCardsContainer'
+import SearchBar from './components/SearchBar'
+
 
 function App() {
+
+  const [searchTerm, searchTermOnChange] = useState("")
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar searchTerm={searchTerm} searchTermOnChange={searchTermOnChange}/>
+      <BookCardsContainer searchTerm={searchTerm}/>
     </div>
   );
+
 }
+
 
 export default App;
