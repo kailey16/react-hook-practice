@@ -6,12 +6,10 @@ import SearchBar from './components/SearchBar'
 
 function App() {
 
-  const [searchTerm, searchTermOnChange] = useState("")
-
   return (
     <div className="App">
-      <SearchBar searchTerm={searchTerm} searchTermOnChange={searchTermOnChange}/>
-      <BookCardsContainer searchTerm={searchTerm}/>
+      <SearchBar />
+      <BookCardsContainer/>
     </div>
   );
 
