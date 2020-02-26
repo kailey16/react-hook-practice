@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import BookCardsContainer from './components/BookCardsContainer'
 import SearchBar from './components/SearchBar'

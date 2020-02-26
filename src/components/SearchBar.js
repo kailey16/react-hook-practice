@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchingBooksWithSearchterm } from '../redux/action'
 
-const SearchBar = (props) => {
+const SearchBar = () => {
+
+  const [searchTerm, searchTermOnChange] = useState("")
+  const dispatch = useDispatch()
+
   return (
     <div className="SearchBar">
-      <form>
-        <input type="text" onChange={(e) => props.searchTermOnChange(e.target.value)} value={props.searchTerm}/>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        dispatch(fetchingBooksWithSearchterm(searchTerm))}}>
+        <input type="text" onChange={(e) => searchTermOnChange(e.target.value)} value={searchTerm}/>
+        <input type="submit" value="Search" />
       </form>
     </div>
   )
